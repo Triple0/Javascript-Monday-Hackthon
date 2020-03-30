@@ -155,9 +155,9 @@ function firstNVowels(s, n) {
 // •	This is an oversimplification of the English language. We are ignoring edge cases like "goose" and "geese", "fungus" and "fungi", etc.
 // •	If you get stuck on a challenge, find help in the Resources tab.
 // •	If you're really stuck, unlock solutions in the Solutions tab.
-// function isPlural(word) {
-// 	return word.endsWith('s');	
-// }
+function isPlural(word) {
+	return word.endsWith('s');	
+}
 
 // Repeating Letters
 // Published by Matt in 
