@@ -1,76 +1,77 @@
-Resources : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/
-Scrabble Hand
-Published by Helen Yu in 
-gamesloopsmathobjects
-Given an array of scrabble tiles, create a function that outputs the maximum possible score a player can achieve by summing up the total number of points for all the tiles in their hand. Each hand contains 7 scrabble tiles.
-Here's an example hand:
-[
-  { tile: "N", score: 1 },
-  { tile: "K", score: 5 },
-  { tile: "Z", score: 10 },
-  { tile: "X", score: 8 },
-  { tile: "D", score: 2 },
-  { tile: "A", score: 1 },
-  { tile: "E", score: 1 }
-]
-The players maximumScore from playing all these tiles would be 1 + 5 + 10 + 8 + 2 + 1 + 1, or 28.
+// Resources : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/
+// Scrabble Hand
+// Published by Helen Yu in 
+// gamesloopsmathobjects
+// Given an array of scrabble tiles, create a function that outputs the maximum possible score a player can achieve by summing up the total number of points for all the tiles in their hand. Each hand contains 7 scrabble tiles.
+// Here's an example hand:
+// [
+//   { tile: "N", score: 1 },
+//   { tile: "K", score: 5 },
+//   { tile: "Z", score: 10 },
+//   { tile: "X", score: 8 },
+//   { tile: "D", score: 2 },
+//   { tile: "A", score: 1 },
+//   { tile: "E", score: 1 }
+// ]
+// The players maximumScore from playing all these tiles would be 1 + 5 + 10 + 8 + 2 + 1 + 1, or 28.
 function maximumScore(tileHand) {
 	return tileHand.reduce((sum, currentValue) => {
   return sum + currentValue.score;
 }, 0);
 }
 
-Length of a Nested Array
-Published by Helen Yu in 
-arraysrecursion
-The .length property on an array will return the number of elements in the array. For example, the array below contains 2 elements:
-[1, [2, 3]]
-// 2 elements, number 1 and array [2, 3]
-Suppose we instead wanted to know the total number of non-nested items in the nested array. In the above case, [1, [2, 3]] contains 3 non-nested items, 1, 2 and 3.
-Write a function that returns the total number of non-nested items in a nested array.
-Examples
-getLength([1, [2, 3]]) ➞ 3
+// Length of a Nested Array
+// Published by Helen Yu in 
+// arraysrecursion
+// The .length property on an array will return the number of elements in the array. For example, the array below contains 2 elements:
+// [1, [2, 3]]
+// // 2 elements, number 1 and array [2, 3]
+// Suppose we instead wanted to know the total number of non-nested items in the nested array. In the above case, [1, [2, 3]] contains 3 non-nested items, 1, 2 and 3.
+// Write a function that returns the total number of non-nested items in a nested array.
+// Examples
+// getLength([1, [2, 3]]) ➞ 3
 
-getLength([1, [2, [3, 4]]]) ➞ 4
+// getLength([1, [2, [3, 4]]]) ➞ 4
 
-getLength([1, [2, [3, [4, [5, 6]]]]]) ➞ 6
+// getLength([1, [2, [3, [4, [5, 6]]]]]) ➞ 6
 
-getLength([1, [2], 1, [2], 1]) ➞ 5
+// getLength([1, [2], 1, [2], 1]) ➞ 5
 
 function getLength(arr) {
 	return arr.flat(Infinity).length;	
 }
 
-Factorial of a Positive Integer
-Published by Matt in 
-conditionsloopsmathrecursion
-Write a function that takes a positive integer and return its factorial.
-Examples
-factorial(4) ➞ 24
+// Factorial of a Positive Integer
+// Published by Matt in 
+// conditionsloopsmathrecursion
+// Write a function that takes a positive integer and return its factorial.
+// Examples
+// factorial(4) ➞ 24
 
-factorial(0) ➞ 1
+// factorial(0) ➞ 1
 
-factorial(9) ➞ 362880
-Notes
-•	The factorial of 0 is 1.
-•	The factorial of any positive integer Z is Z * (Z - 1) * (Z - 2) * . . . . . . * 1 (e.g. factorial of 3 is 3 * 2 * 1 = 6).
+// factorial(9) ➞ 362880
+// Notes
+// •	The factorial of 0 is 1.
+// •	The factorial of any positive integer Z is Z * (Z - 1) * (Z - 2) * . . . . . . * 1 (e.g. factorial of 3 is 3 * 2 * 1 = 6).
+
 function factorial(z) {
 	if(z < 0){ return ; }
 	if(z===0){ return 1;} else return z * factorial(z - 1);
 }
 
-Basic Calculator
-Published by Stanislav Mozolevskiy in 
-algebramathnumbers
-Create a function that takes two numbers and a mathematical operator + - / * and will perform a calculation with the given numbers.
-Examples
-calculator(2, "+", 2) ➞ 4
+// Basic Calculator
+// Published by Stanislav Mozolevskiy in 
+// algebramathnumbers
+// Create a function that takes two numbers and a mathematical operator + - / * and will perform a calculation with the given numbers.
+// Examples
+// calculator(2, "+", 2) ➞ 4
 
-calculator(2, "*", 2) ➞ 4
+// calculator(2, "*", 2) ➞ 4
 
-calculator(4, "/", 2) ➞ 2
-Notes
-If the input tries to divide by 0, return: "Can't divide by 0!"
+// calculator(4, "/", 2) ➞ 2
+// Notes
+// If the input tries to divide by 0, return: "Can't divide by 0!"
 
 function calculator(num1, operator, num2) {
 	if(num2 === 0){ return "Can't divide by 0!";}
@@ -88,38 +89,40 @@ case"+":
 		}
 	}
 }
-Absolute Sum
-Published by gabe in 
-arraysloopsmathnumbers
-Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
-Examples
-getAbsSum([2, -1, 4, 8, 10]) ➞ 25
 
-getAbsSum([-3, -4, -10, -2, -3]) ➞ 22
+// Absolute Sum
+// Published by gabe in 
+// arraysloopsmathnumbers
+// Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
+// Examples
+// getAbsSum([2, -1, 4, 8, 10]) ➞ 25
 
-getAbsSum([2, 4, 6, 8, 10]) ➞ 30
+// getAbsSum([-3, -4, -10, -2, -3]) ➞ 22
 
-getAbsSum([-1]) ➞ 1
-Notes
-The term "absolute value" means to remove any negative sign in front of a number, and to think of all numbers as positive (or zero).
+// getAbsSum([2, 4, 6, 8, 10]) ➞ 30
+
+// getAbsSum([-1]) ➞ 1
+// Notes
+// The term "absolute value" means to remove any negative sign in front of a number, and to think of all numbers as positive (or zero).
 
 function getAbsSum(arr) {
 	const reducer = (accumulator, currentVal) => accumulator + Math.abs(currentVal);
 	return arr.reduce(reducer, 0);
 }
-First N Vowels
-Published by Helen Yu in 
-loopsregexstrings
-Write a function that returns the first n vowels of a string.
-Examples
-firstNVowels("sharpening skills", 3) ➞ "aei"
 
-firstNVowels("major league", 5) ➞ "aoeau"
+// First N Vowels
+// Published by Helen Yu in 
+// loopsregexstrings
+// Write a function that returns the first n vowels of a string.
+// Examples
+// firstNVowels("sharpening skills", 3) ➞ "aei"
 
-firstNVowels("hostess", 5) ➞ "invalid"
-Notes
-•	Return "invalid" if the n exceeds the number of vowels in a string.
-•	Vowels are: a, e, i, o, u
+// firstNVowels("major league", 5) ➞ "aoeau"
+
+// firstNVowels("hostess", 5) ➞ "invalid"
+// Notes
+// •	Return "invalid" if the n exceeds the number of vowels in a string.
+// •	Vowels are: a, e, i, o, u
 function firstNVowels(s, n) {
 	const vowelExp = /[aeiou]/gi;
 	const vowel = s.match( vowelExp );
