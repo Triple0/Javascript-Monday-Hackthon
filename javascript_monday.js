@@ -1,4 +1,6 @@
 // Resources : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/
+//Question Sources: https://edabit.com/challenge/
+//
 // Scrabble Hand
 // Published by Helen Yu in 
 // gamesloopsmathobjects
@@ -15,9 +17,9 @@
 // ]
 // The players maximumScore from playing all these tiles would be 1 + 5 + 10 + 8 + 2 + 1 + 1, or 28.
 function maximumScore(tileHand) {
-	return tileHand.reduce((sum, currentValue) => {
-  return sum + currentValue.score;
-}, 0);
+    return tileHand.reduce((sum, currentValue) => {
+        return sum + currentValue.score;
+    }, 0);
 }
 
 // Length of a Nested Array
@@ -38,7 +40,7 @@ function maximumScore(tileHand) {
 // getLength([1, [2], 1, [2], 1]) ➞ 5
 
 function getLength(arr) {
-	return arr.flat(Infinity).length;	
+    return arr.flat(Infinity).length;
 }
 
 // Factorial of a Positive Integer
@@ -56,8 +58,8 @@ function getLength(arr) {
 // •	The factorial of any positive integer Z is Z * (Z - 1) * (Z - 2) * . . . . . . * 1 (e.g. factorial of 3 is 3 * 2 * 1 = 6).
 
 function factorial(z) {
-	if(z < 0){ return ; }
-	if(z===0){ return 1;} else return z * factorial(z - 1);
+    if (z < 0) { return; }
+    if (z === 0) { return 1; } else return z * factorial(z - 1);
 }
 
 // Basic Calculator
@@ -74,20 +76,20 @@ function factorial(z) {
 // If the input tries to divide by 0, return: "Can't divide by 0!"
 
 function calculator(num1, operator, num2) {
-	if(num2 === 0){ return "Can't divide by 0!";}
-	else {
-		switch(operator){
-				case"/":
-		    		return num1 / num2;
-				case"-":
-return num1 - num2;
-case"+":				
-				return num1 - num2;
-				case"*":
-		   		 return num1 * num2;
-		    
-		}
-	}
+    if (num2 === 0) { return "Can't divide by 0!"; }
+    else {
+        switch (operator) {
+            case "/":
+                return num1 / num2;
+            case "-":
+                return num1 - num2;
+            case "+":
+                return num1 - num2;
+            case "*":
+                return num1 * num2;
+
+        }
+    }
 }
 
 // Absolute Sum
@@ -106,8 +108,8 @@ case"+":
 // The term "absolute value" means to remove any negative sign in front of a number, and to think of all numbers as positive (or zero).
 
 function getAbsSum(arr) {
-	const reducer = (accumulator, currentVal) => accumulator + Math.abs(currentVal);
-	return arr.reduce(reducer, 0);
+    const reducer = (accumulator, currentVal) => accumulator + Math.abs(currentVal);
+    return arr.reduce(reducer, 0);
 }
 
 // First N Vowels
@@ -124,17 +126,17 @@ function getAbsSum(arr) {
 // •	Return "invalid" if the n exceeds the number of vowels in a string.
 // •	Vowels are: a, e, i, o, u
 function firstNVowels(s, n) {
-	const vowelExp = /[aeiou]/gi;
-	const vowel = s.match( vowelExp );
-	let output = "";
-	if( vowel.length >= n ){
-		for( var i = 0; i < n; i++ ){
-			 result += vowel[i];	
-	} 
-	return output;
-	} else {
-		return "invalid";				
-		}
+    const vowelExp = /[aeiou]/gi;
+    const vowel = s.match(vowelExp);
+    let output = "";
+    if (vowel.length >= n) {
+        for (var i = 0; i < n; i++) {
+            result += vowel[i];
+        }
+        return output;
+    } else {
+        return "invalid";
+    }
 }
 
 // Is the Word Singular or Plural?
@@ -156,7 +158,7 @@ function firstNVowels(s, n) {
 // •	If you get stuck on a challenge, find help in the Resources tab.
 // •	If you're really stuck, unlock solutions in the Solutions tab.
 function isPlural(word) {
-	return word.endsWith('s');	
+    return word.endsWith('s');
 }
 
 // Repeating Letters
@@ -173,10 +175,10 @@ function isPlural(word) {
 // All test cases contain valid strings. Don't worry about spaces, special characters or numbers. They're all considered valid characters.
 
 function doubleChar(str) {
-	const str1 = str.split("");
-	const task = str[0];
-	task += str1.reduce((accum, cValue) => accum + (cValue+cValue));
-	return task;
+    const str1 = str.split("");
+    const task = str[0];
+    task += str1.reduce((accum, cValue) => accum + (cValue + cValue));
+    return task;
 }
 
 // https://edabit.com/challenge/wpHyrxbSaYxLeXT6L
@@ -208,17 +210,17 @@ function doubleChar(str) {
 
 
 function nSidedShape(n) {
-	let shapes = ["circle", 
-								"semi-circle", 
-								"triangle", 
-								"square", 	
-								"pentagon", 
-								"hexagon", 
-								"heptagon",
-								"octagon", 
-								"nonagon",
-								"decagon"]
-	return shapes[n-1];
+    let shapes = ["circle",
+        "semi-circle",
+        "triangle",
+        "square",
+        "pentagon",
+        "hexagon",
+        "heptagon",
+        "octagon",
+        "nonagon",
+        "decagon"]
+    return shapes[n - 1];
 }
 
 // https://edabit.com/challenge/7GWG3z27pKqJRdPaM
@@ -239,7 +241,7 @@ function nSidedShape(n) {
 // Notes
 // If you know how to use object destructuring, go ahead and complete this challenge, otherwise check the Resources tab for some examples.
 
-const user = { name: "John", email: "john@example.com",city: "Phoenix", state: "AZ", country: "USA"}
+const user = { name: "John", email: "john@example.com", city: "Phoenix", state: "AZ", country: "USA" }
 const str = `({ name, email, ...rest} = user ).toString()`
 
 // Get the Century
@@ -261,14 +263,14 @@ const str = `({ name, email, ...rest} = user ).toString()`
 // •	The 11th century is between 1001 and 1100.
 // •	The 18th century is between 1701-1800.
 function century(year) {
-	if(year.toString().substring(2)=="00"){
-		return year.toString().substring(0,2)+"th century";
-	} else {
-		if(year.toString().substring(0,2)=="20"){
-			return (Number(year.toString().substring(0,2))+1).toString()+"st century";
-		} 
-		return (Number(year.toString().substring(0,2))+1).toString()+"th century";
-	}
+    if (year.toString().substring(2) == "00") {
+        return year.toString().substring(0, 2) + "th century";
+    } else {
+        if (year.toString().substring(0, 2) == "20") {
+            return (Number(year.toString().substring(0, 2)) + 1).toString() + "st century";
+        }
+        return (Number(year.toString().substring(0, 2)) + 1).toString() + "th century";
+    }
 }
 
 // https://edabit.com/challenge/T2sDPQQhpaEd9YAiq
@@ -301,13 +303,13 @@ const REGEXP = /\D/g;
 // Your code should accept strings of any case (upper, lower and mixed case).
 
 function countSyllables(str) {
-	const output = [];
-	for(var i in str){
-		if(str.includes(output)){
-			 output.push(str[i]);
-		} 		
-	}
-	return str.length/output.length;	
+    const output = [];
+    for (var i in str) {
+        if (str.includes(output)) {
+            output.push(str[i]);
+        }
+    }
+    return str.length / output.length;
 }
 
 // https://edabit.com/challenge/STfAEAE5fjNmFCsvf
@@ -325,7 +327,7 @@ function countSyllables(str) {
 // "eyes", "nose", and "ears" should not be assigned to anything
 
 const arr = ["eyes", "nose", "lips", "ears"];
-var [,,lips,] = arr;
+var [, , lips,] = arr;
 
 // https://edabit.com/challenge/xPAPYC24EEpwzwQDy
 // Char-to-ASCII
@@ -346,7 +348,7 @@ var [,,lips,] = arr;
 // •	If you get stuck on a challenge, find help in the Resources tab.
 // •	If you're really stuck, unlock solutions in the Solutions tab.
 function ctoa(c) {
-	return c.charCodeAt(0);
+    return c.charCodeAt(0);
 }
 
 // https://edabit.com/challenge/pzmTaGsP6FWRNBF9y
@@ -370,7 +372,7 @@ function ctoa(c) {
 // N/A
 
 function getMultipliedArr(arr) {
-	return (arr.map(x => x*2));
+    return (arr.map(x => x * 2));
 }
 
 // https://edabit.com/challenge/qkNvH9BZLTNtKQvae
@@ -403,7 +405,7 @@ function getMultipliedArr(arr) {
 // •	If you get stuck on a challenge, find help in the Resources tab.
 // •	If you're really stuck, unlock solutions in the Solutions tab.
 function equalSlices(total, people, each) {
-	return total >= (people * each);	
+    return total >= (people * each);
 }
 
 // https://edabit.com/challenge/hztqDz4mjCPpLMMF4
@@ -423,7 +425,7 @@ function equalSlices(total, people, each) {
 // •	How can you express the input parameter so it takes a variable number of arguments?
 // •	Check the Resources tab for additional info.
 function numberArgs(...argsN) {
-	return argsN.length;		
+    return argsN.length;
 }
 
 // https://edabit.com/challenge/grqSjHHQYHBeKK6E3
@@ -435,10 +437,10 @@ function numberArgs(...argsN) {
 // •	Do not use the same method twice.
 // •	Do not use String methods that accept regular expresssions as arguments.
 function twoMethods() {
-	// find and equals are not regular expression methods.  Replace them. 
-	let methodOne = /hello/.exec("hello")[0] === "hello" 
-	let methodTwo = /hello/.test("hello") // returns a boolean
-	return methodOne && methodTwo
+    // find and equals are not regular expression methods.  Replace them. 
+    let methodOne = /hello/.exec("hello")[0] === "hello"
+    let methodTwo = /hello/.test("hello") // returns a boolean
+    return methodOne && methodTwo
 }
 
 // https://edabit.com/challenge/9MBwBaa3wDKX8Mxbv
@@ -459,5 +461,81 @@ function twoMethods() {
 // N/A
 
 function match(s1, s2) {
-	return s1.toLowerCase() === s2.toLowerCase();
+    return s1.toLowerCase() === s2.toLowerCase();
+}
+
+// https://edabit.com/challenge/izss6QT59oH72uky3
+// Add the Index
+// Published by er0s in 
+// arrayslanguage_fundamentalsloopsnumbers
+// Given an array of numbers, create a function which returns the same array but with each element's index in the array added to itself. This means you add 0 to the number at index 0, add 1 to the number at index 1, etc...
+// Examples
+// addIndexes([0, 0, 0, 0, 0]) ➞ [0, 1, 2, 3, 4]
+
+// addIndexes([1, 2, 3, 4, 5]) ➞ [1, 3, 5, 7, 9]
+
+// addIndexes([5, 4, 3, 2, 1]) ➞ [5, 5, 5, 5, 5]
+// Notes
+// You'll only get numbers in the array.
+
+function addIndexes(arr) {
+    return arr.map((x, index) => x + index);
+}
+
+// https://edabit.com/challenge/giAxQu4vjMRc7dJ2u
+// Testing K^K == N?
+// Published by Helen Yu in 
+// bit_operationsmathnumbersvalidation
+// Write a function that returns true if k^k == n for input (n, k) and return false otherwise.
+// Examples
+// kToK(4, 2) ➞ true
+
+// kToK(387420489, 9) ➞ true
+// // 9^9 == 387420489
+
+// kToK(3124, 5) ➞ false
+
+// kToK(17, 3) ➞ false
+// Notes
+// The ^ operator refers to exponentiation operation, not the bitwise XOR operation.
+
+function kToK(n, k) {
+    return Math.pow(k, k) == n;
+}
+
+// https://edabit.com/challenge/8zbTPvexR9Aei3Csp
+// Spaces Between Each Character
+// Published by er0s in 
+// formattinglanguage_fundamentalsstrings
+// Create a function that takes a string and returns a string with spaces in between all of the characters.
+// Examples
+// spaceMeOut("space") ➞ "s p a c e"
+
+// spaceMeOut("far out") ➞ "f a r  o u t"
+
+// spaceMeOut("elongated musk") ➞ "e l o n g a t e d   m u s k"
+// Notes
+// Treat a space as its own character (i.e. leave three spaces between words).
+
+function spaceMeOut(str) {
+    return str.split("").join(" ");
+}
+
+// https://edabit.com/challenge/Y24efzo7NaACt3GvX
+// Free Coffee Cups
+// Published by Kavin Umasankar in 
+// logicmathnumbers
+// Per 6 coffee cups I buy, I get a 7th cup free. In total, I get 7 cups. Create a function that takes n cups bought and return as an integer the total number of cups I would get.
+// Examples
+// totalCups(6) ➞ 7
+
+// totalCups(12) ➞ 14
+
+// totalCups(213) ➞ 248
+// Notes
+// •	Number of cups I bought + number of cups I got for free.
+// •	Only valid inputs will be given.
+
+function totalCups(n) {
+    return n + parseInt(n / 6);
 }
